@@ -22,7 +22,7 @@ namespace PDARazorApp.Pages.TaskPages
 
         public async Task OnGetAsync()
         {
-            CustomerTask = await _context.CustomerTasks.ToListAsync();
+            CustomerTask = await _context.CustomerTask.ToListAsync();
         }
     }
 }

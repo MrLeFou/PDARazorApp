@@ -33,7 +33,7 @@ namespace PDARazorApp.Pages.TaskPages
                 return Page();
             }
 
-            _context.CustomerTasks.Add(CustomerTask);
+            _context.CustomerTask.Add(CustomerTask);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

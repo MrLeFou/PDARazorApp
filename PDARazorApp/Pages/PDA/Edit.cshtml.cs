@@ -29,7 +29,7 @@ namespace PDARazorApp.Pages.TaskPages
                 return NotFound();
             }
 
-            CustomerTask = await _context.CustomerTasks.FirstOrDefaultAsync(m => m.TaskId == id);
+            CustomerTask = await _context.CustomerTask.FirstOrDefaultAsync(m => m.TaskId == id);
 
             if (CustomerTask == null)
             {
@@ -68,7 +68,7 @@ namespace PDARazorApp.Pages.TaskPages
 
         private bool CustomerTaskExists(int id)
         {
-            return _context.CustomerTasks.Any(e => e.TaskId == id);
+            return _context.CustomerTask.Any(e => e.TaskId == id);
         }
     }
 }
