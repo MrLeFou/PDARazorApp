@@ -12,5 +12,7 @@ namespace PDARazorApp.Data
             : base(options)
         {
         }
+
+        public DbSet<CustomerTask> CustomerTasks { get; set; }
     }
 }
