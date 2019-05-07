@@ -1,0 +1,54 @@
+﻿@page
+@model PDARazorApp.Pages.TaskPages.IndexModel
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerTask[0].CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerTask[0].StartsAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerTask[0].EndsAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerTask[0].PriorityId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerTask[0].TaskDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CustomerTask) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartsAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndsAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriorityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescription)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TaskId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TaskId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TaskId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

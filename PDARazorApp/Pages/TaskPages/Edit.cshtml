@@ -1,0 +1,49 @@
+﻿@page
+@model PDARazorApp.Pages.TaskPages.EditModel
+
+<h4>CustomerTask</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CustomerTask.TaskId" />
+            <div class="form-group">
+                <label asp-for="CustomerTask.CustomerId" class="control-label"></label>
+                <input asp-for="CustomerTask.CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerTask.CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerTask.StartsAt" class="control-label"></label>
+                <input asp-for="CustomerTask.StartsAt" class="form-control" />
+                <span asp-validation-for="CustomerTask.StartsAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerTask.EndsAt" class="control-label"></label>
+                <input asp-for="CustomerTask.EndsAt" class="form-control" />
+                <span asp-validation-for="CustomerTask.EndsAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerTask.PriorityId" class="control-label"></label>
+                <input asp-for="CustomerTask.PriorityId" class="form-control" />
+                <span asp-validation-for="CustomerTask.PriorityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerTask.TaskDescription" class="control-label"></label>
+                <input asp-for="CustomerTask.TaskDescription" class="form-control" />
+                <span asp-validation-for="CustomerTask.TaskDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
